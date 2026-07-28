@@ -48,3 +48,17 @@ rdflib-geosparql only supports a subset of DGGS systems, but support may be expa
 
 
 
+
+
+## Documentation
+
+Documentation for this library is made using [Doxygen](https://www.doxygen.nl/) which reads the contents of `docs/` and comments and other elements of the code files in `geosparql/` and builds a series of HTML web pages.
+
+To build the documentation:
+
+1. install Doxygen
+    a. on a Mac, this is something like `brew install doxygen graphviz
+    b. on Ubuntu Linux, this is something like `sudo apt update && sudo apt install doxygen`
+2. build the documentation
+    a. within the `docs/` folder, run the command `doxygen Doxyfile`
+    b. this will produce a folder called `html/` within docs and the starting page is `index.html`
