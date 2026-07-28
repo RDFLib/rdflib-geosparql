@@ -41,14 +41,21 @@ rdflib-geosparql supports the following geospatial literal types:
 The DGGS Literal is able to support a variety of DGGS systems.
 rdflib-geosparql only supports a subset of DGGS systems, but support may be expanded in the future
 
+## Installation
 
+To run the tests or Jupyter notebooks, install this library like this:
 
+1. Create a Python 3.12 Virtual Environment
+    * e.g. using an installed version of Python 3.12 and then running `python3.12 -m venv .venv` on the command line
+2. Activate the created Virtual Environment
+   * `source .venv/bin/activate`
+3. Install requirements
+    * `pip install -r requirements.txt`
 
+After installation, you should run the test to ensure everything is working:
 
-
-
-
-
+4. Run tests
+    * `pytest`
 
 ## Documentation
 
