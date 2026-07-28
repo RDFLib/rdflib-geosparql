@@ -23,15 +23,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: pip
     - name: Create Doxygen Documentation 🔧
       run: |
-         sudo apt-get install python3 python3-setuptools python3-pip python3-dev  -y
-         sudo apt-get install gcc libpq-dev -y
+         sudo apt-get update
          sudo apt-get install doxygen graphviz -y
-         sudo apt-get install python3-venv python3-wheel -y
-         sudo pip3 install wheel pytest pytest-md pytest-emoji
-         sudo pip3 install -r requirements.txt
+         python -m pip install --upgrade pip
+         python -m pip install -r requirements.txt
          cd docs
          doxygen Doxyfile
          ls html/
@@ -51,11 +54,18 @@ jobs:
   
     runs-on: ubuntu-latest
 
-    steps:  
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
       - name: Install dependencies 🔧
         run: |
-           sudo apt-get install python3 python3-setuptools python3-pip python3-dev  -y
-           sudo pip3 install wheel pytest pytest-md pytest-emoji
+           python -m pip install --upgrade pip
+           python -m pip install -r requirements.txt
+           python -m pip install pytest pytest-md pytest-emoji
       - name: Run pytest
         uses: pavelzw/pytest-action@v2
         with:
@@ -65,4 +75,3 @@ jobs:
           custom-arguments: '-q'
           click-to-expand: true
           report-title: 'Test Report'
-
