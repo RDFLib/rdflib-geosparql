@@ -41,10 +41,31 @@ rdflib-geosparql supports the following geospatial literal types:
 The DGGS Literal is able to support a variety of DGGS systems.
 rdflib-geosparql only supports a subset of DGGS systems, but support may be expanded in the future
 
+## Installation
 
+To run the tests or Jupyter notebooks, install this library like this:
 
+1. Create a Python 3.12 Virtual Environment
+    * e.g. using an installed version of Python 3.12 and then running `python3.12 -m venv .venv` on the command line
+2. Activate the created Virtual Environment
+   * `source .venv/bin/activate`
+3. Install requirements
+    * `pip install -r requirements.txt`
 
+After installation, you should run the test to ensure everything is working:
 
+4. Run tests
+    * `pytest`
 
+## Documentation
 
+Documentation for this library is made using [Doxygen](https://www.doxygen.nl/) which reads the contents of `docs/` and comments and other elements of the code files in `geosparql/` and builds a series of HTML web pages.
 
+To build the documentation:
+
+1. install Doxygen
+    a. on a Mac, this is something like `brew install doxygen graphviz
+    b. on Ubuntu Linux, this is something like `sudo apt update && sudo apt install doxygen`
+2. build the documentation
+    a. within the `docs/` folder, run the command `doxygen Doxyfile`
+    b. this will produce a folder called `html/` within docs and the starting page is `index.html`
